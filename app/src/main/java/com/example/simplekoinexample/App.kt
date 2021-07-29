@@ -1,6 +1,7 @@
 package com.example.simplekoinexample
 
 import android.app.Application
+import com.example.simplekoinexample.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,10 +13,14 @@ class App : Application() {
             androidContext(this@App)
             modules(
                 listOf(
-                    appModule
+                    appModule,
+                    todoAppModule,
+                    networkModule,
+                    viewModelModule
                 )
             )
         }
+
     }
 
 }
