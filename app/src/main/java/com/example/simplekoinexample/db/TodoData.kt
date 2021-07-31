@@ -1,4 +1,4 @@
-package com.example.simplekoinexample.models
+package com.example.simplekoinexample.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

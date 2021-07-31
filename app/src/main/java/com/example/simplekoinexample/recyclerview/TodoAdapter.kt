@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplekoinexample.R
-import com.example.simplekoinexample.models.TodoData
+import com.example.simplekoinexample.db.TodoData
 
 class TodoAdapter : RecyclerView.Adapter<TodoItemViewHolder>() {
 

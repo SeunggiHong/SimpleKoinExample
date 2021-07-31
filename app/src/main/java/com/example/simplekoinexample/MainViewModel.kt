@@ -1,12 +1,18 @@
 package com.example.simplekoinexample
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.simplekoinexample.models.TodoData
+import com.example.simplekoinexample.db.TodoData
+import com.example.simplekoinexample.models.TodoRepository
 import com.example.simplekoinexample.retrofit.Retrofit_Interface
 import io.reactivex.schedulers.Schedulers
 
-class MainViewModel(val apiService: Retrofit_Interface, val schedulers: RxSingleSchedulers): ViewModel() {
+class MainViewModel(application: Application,
+    val apiService: Retrofit_Interface, val schedulers: RxSingleSchedulers): AndroidViewModel(application)
+{
+    private val repository: TodoRepository = TodoRepository(application)
 
     val todoList = MutableLiveData<List<TodoData>>()
 
@@ -18,6 +24,14 @@ class MainViewModel(val apiService: Retrofit_Interface, val schedulers: RxSingle
 
                 })
 
+    }
+
+    fun saveTodo(todo: TodoData) {
+        repository.saveTodo(todo)
+    }
+
+    fun updateTodo(todo: TodoData){
+        repository.deleteTodo(todo)
     }
 
 }

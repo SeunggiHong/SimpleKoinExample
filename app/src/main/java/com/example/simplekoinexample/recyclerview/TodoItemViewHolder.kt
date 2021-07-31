@@ -2,7 +2,7 @@ package com.example.simplekoinexample.recyclerview
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.simplekoinexample.models.TodoData
+import com.example.simplekoinexample.db.TodoData
 import kotlinx.android.synthetic.main.item_todo.view.*
 
 class TodoItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

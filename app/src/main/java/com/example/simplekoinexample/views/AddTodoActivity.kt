@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.simplekoinexample.Constants.TAG
+import com.example.simplekoinexample.utils.Constants.TAG
 import com.example.simplekoinexample.R
 import com.example.simplekoinexample.databinding.ActivityAddTodoBinding
 

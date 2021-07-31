@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.example.simplekoinexample.Constants.TAG
+import com.example.simplekoinexample.utils.Constants.TAG
 import com.example.simplekoinexample.KoinPresenter
 import com.example.simplekoinexample.MainViewModel
 import com.example.simplekoinexample.R
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "MainActivity - onStop() called") 
+        Log.d(TAG, "MainActivity - onStop() called")
     }
 
     override fun onDestroy() {
