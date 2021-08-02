@@ -42,4 +42,8 @@ class TodoRepository(application: Application) {
         }
     }
 
+    fun getAllTodoList() : LiveData<List<TodoData>> {
+        return allTodoList
+    }
+
 }
