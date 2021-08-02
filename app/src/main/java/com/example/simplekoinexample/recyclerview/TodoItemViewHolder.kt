@@ -8,10 +8,11 @@ import kotlinx.android.synthetic.main.item_todo.view.*
 class TodoItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private val todoTitlte = itemView.tv_todo_title
-    private val todoDescrpiton = itemView.tv_todo_description
+    private val todoDescrpiton = itemView.tv_todo_content
 
     fun bindWithView(todoData: TodoData) {
         todoTitlte.text = todoData.title
+        todoDescrpiton.text = todoData.content
     }
 
 }
