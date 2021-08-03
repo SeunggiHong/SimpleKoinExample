@@ -17,21 +17,21 @@ import com.example.simplekoinexample.MainViewModel
 import com.example.simplekoinexample.R
 import com.example.simplekoinexample.databinding.ActivityMainBinding
 import com.example.simplekoinexample.db.TodoData
+import com.example.simplekoinexample.recyclerview.ClickInterface
 import com.example.simplekoinexample.recyclerview.TodoAdapter
 import com.example.simplekoinexample.utils.Constants
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ClickInterface {
     private lateinit var binding: ActivityMainBinding
     private val namePresenter: KoinPresenter by inject()
     private val mainViewModel: MainViewModel by viewModel()
-    lateinit var todoAdapter: TodoAdapter
+    private lateinit var todoAdapter: TodoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
         Log.d(TAG, "MainActivity - onCreate() called")
 
         initView()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initAdapter() {
         rc_todo_view.layoutManager = LinearLayoutManager(this)
-        todoAdapter = TodoAdapter()
+        todoAdapter = TodoAdapter(this)
         rc_todo_view.adapter = todoAdapter
     }
 
@@ -83,9 +83,8 @@ class MainActivity : AppCompatActivity() {
 //        mainViewModel.fetchTodo()
 
         mainViewModel.getAllTodoList().observe(this, Observer { todoList ->
+            Log.d(TAG, "MainActivity - observe() called")
             todoAdapter.setItems(todoList)
-            Log.d(TAG, "mainViewModel - observe()")
-
         })
     }
 
@@ -118,4 +117,10 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d(TAG, "MainActivity - onDestroy() called")
     }
+
+    override fun onDeleteClicked(todoData: TodoData) {
+        Log.d(TAG, "MainActivity - onItemClicked() data is :$todoData")
+        mainViewModel.deleteTodo(todoData)
+    }
+
 }

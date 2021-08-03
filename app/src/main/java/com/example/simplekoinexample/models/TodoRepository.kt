@@ -42,6 +42,13 @@ class TodoRepository(application: Application) {
         }
     }
 
+    fun updateTodo(todo: TodoData) = runBlocking {
+        this.launch(Dispatchers.IO) {
+            todoDao.update(todo)
+            Log.d(TAG, "TodoRepository - updateTodo() called")
+        }
+    }
+
     fun getAllTodoList() : LiveData<List<TodoData>> {
         return allTodoList
     }

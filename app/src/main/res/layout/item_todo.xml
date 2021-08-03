@@ -15,10 +15,12 @@
         android:padding="10dp">
 
         <ImageView
+            android:id="@+id/iv_todo_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_delete_forever_24"
             />
 
         <LinearLayout

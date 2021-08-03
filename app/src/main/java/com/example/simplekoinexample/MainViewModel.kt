@@ -37,6 +37,10 @@ class MainViewModel(application: Application,
     }
 
     fun updateTodo(todo: TodoData){
+        repository.updateTodo(todo)
+    }
+
+    fun deleteTodo(todo: TodoData) {
         repository.deleteTodo(todo)
     }
 
