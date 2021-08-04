@@ -1,6 +1,6 @@
 package com.example.simplekoinexample
 
-import com.example.simplekoinexample.retrofit.Retrofit_Interface
+import com.example.simplekoinexample.models.api.Retrofit_Interface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

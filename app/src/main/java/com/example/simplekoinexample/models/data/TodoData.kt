@@ -1,4 +1,4 @@
-package com.example.simplekoinexample.db
+package com.example.simplekoinexample.models.data
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

@@ -5,30 +5,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.simplekoinexample.utils.Constants.TAG
-import com.example.simplekoinexample.KoinPresenter
-import com.example.simplekoinexample.MainViewModel
+import com.example.simplekoinexample.viewmodels.MainViewModel
 import com.example.simplekoinexample.R
 import com.example.simplekoinexample.databinding.ActivityMainBinding
-import com.example.simplekoinexample.db.TodoData
-import com.example.simplekoinexample.recyclerview.ClickInterface
-import com.example.simplekoinexample.recyclerview.TodoAdapter
+import com.example.simplekoinexample.models.data.TodoData
+import com.example.simplekoinexample.adapters.ClickInterface
+import com.example.simplekoinexample.adapters.TodoAdapter
 import com.example.simplekoinexample.utils.Constants
 import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(), ClickInterface {
     private lateinit var binding: ActivityMainBinding
-    private val namePresenter: KoinPresenter by inject()
-    private val mainViewModel: MainViewModel by viewModel()
     private lateinit var todoAdapter: TodoAdapter
+
+    private val mainViewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +61,6 @@ class MainActivity : AppCompatActivity(), ClickInterface {
     private fun initView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
-        binding.tvNameView.text = namePresenter.sayMyName()
     }
 
     private fun initAdapter() {
@@ -75,13 +70,6 @@ class MainActivity : AppCompatActivity(), ClickInterface {
     }
 
     private fun initViewModel() {
-//        mainViewModel.todoList.observe(this, Observer {
-//            it.let {
-//                todoAdapter.setItems(it)
-//            }
-//        })
-//        mainViewModel.fetchTodo()
-
         mainViewModel.getAllTodoList().observe(this, Observer { todoList ->
             Log.d(TAG, "MainActivity - observe() called")
             todoAdapter.setItems(todoList)

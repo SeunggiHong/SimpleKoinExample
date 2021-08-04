@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.simplekoinexample.MainViewModel
+import com.example.simplekoinexample.viewmodels.MainViewModel
 import com.example.simplekoinexample.utils.Constants.TAG
 import com.example.simplekoinexample.R
 import com.example.simplekoinexample.databinding.ActivityAddTodoBinding
-import com.example.simplekoinexample.db.TodoData
+import com.example.simplekoinexample.models.data.TodoData
 import com.example.simplekoinexample.utils.Constants
 import kotlinx.android.synthetic.main.activity_add_todo.*
 import org.koin.androidx.viewmodel.ext.android.viewModel

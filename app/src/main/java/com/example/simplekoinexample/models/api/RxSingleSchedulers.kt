@@ -1,4 +1,4 @@
-package com.example.simplekoinexample
+package com.example.simplekoinexample.models.api
 
 import io.reactivex.SingleTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers

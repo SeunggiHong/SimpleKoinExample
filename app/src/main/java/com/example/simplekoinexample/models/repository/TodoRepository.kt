@@ -1,14 +1,13 @@
-package com.example.simplekoinexample.models
+package com.example.simplekoinexample.models.repository
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.example.simplekoinexample.db.TodoDao
-import com.example.simplekoinexample.db.TodoData
-import com.example.simplekoinexample.db.TodoDatabase
+import com.example.simplekoinexample.models.db.TodoDao
+import com.example.simplekoinexample.models.data.TodoData
+import com.example.simplekoinexample.models.db.TodoDatabase
 import com.example.simplekoinexample.utils.Constants.TAG
 import kotlinx.coroutines.*
-import kotlin.coroutines.coroutineContext
 
 /**
  *

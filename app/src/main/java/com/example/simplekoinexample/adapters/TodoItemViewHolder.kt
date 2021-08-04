@@ -1,9 +1,9 @@
-package com.example.simplekoinexample.recyclerview
+package com.example.simplekoinexample.adapters
 
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.simplekoinexample.db.TodoData
+import com.example.simplekoinexample.models.data.TodoData
 import com.example.simplekoinexample.utils.Constants.TAG
 import kotlinx.android.synthetic.main.item_todo.view.*
 

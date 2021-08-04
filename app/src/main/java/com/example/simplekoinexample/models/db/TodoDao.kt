@@ -1,7 +1,8 @@
-package com.example.simplekoinexample.db
+package com.example.simplekoinexample.models.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.simplekoinexample.models.data.TodoData
 
 @Dao
 interface TodoDao {

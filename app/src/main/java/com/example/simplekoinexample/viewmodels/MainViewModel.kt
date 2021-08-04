@@ -1,14 +1,14 @@
-package com.example.simplekoinexample
+package com.example.simplekoinexample.viewmodels
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.simplekoinexample.db.TodoData
-import com.example.simplekoinexample.models.TodoRepository
-import com.example.simplekoinexample.retrofit.Retrofit_Interface
+import com.example.simplekoinexample.models.api.RxSingleSchedulers
+import com.example.simplekoinexample.models.data.TodoData
+import com.example.simplekoinexample.models.repository.TodoRepository
+import com.example.simplekoinexample.models.api.Retrofit_Interface
 import com.example.simplekoinexample.utils.Constants.TAG
 import io.reactivex.schedulers.Schedulers
 
